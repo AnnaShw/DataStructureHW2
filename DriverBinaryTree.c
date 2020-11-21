@@ -22,9 +22,17 @@ int main()
 	/*if (IsEmpty(root) == 0)
 		printf("\nTree isn't empty!");
 	else
-		printf("\nTree is empty");*/
-	
+		printf("\nTree is empty");
 	PrintLeaves(root);
+	if (Contains(root, 12) == 1)
+		printf("\n%d in the tree.\n", 12);
+	else
+		printf("\n%d  not in the tree.\n", 12);
+	printf("\nSum of all keys of the tree is: %d\n", SumOfKeys(root));
+	printf("\nCount of node's in this tree is: %d\n", CountNodes(root));*/
+	printf("\n\n");
+	LevelStatistics(root, 3);
+
 	deleteTree(root);
 	printf("\nTree deleted\n");
 

@@ -20,4 +20,10 @@ void in_order_traversal(node*);
 
 int IsEmpty(node* root);
 void PrintLeaves(node* root);
+int Contains(node* root, int key);
+int CountNodes(node* root);
+int SumOfKeys(node* root);
+void CountNodesInGivenLevel(node* root, int level, int* count);
+void LevelStatistics(node* root, int level);
+int isPerfect(node* root);
 #endif

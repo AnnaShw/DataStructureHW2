@@ -123,9 +123,67 @@ int IsEmpty(node* root) {
 void PrintLeaves(node* root) {
 		if (root != NULL) {
 			if (root->left == NULL && root->right == NULL) {
-				printf("\t%d\t", root->data);
+				printf("\n%d", root->data);
 			}
 			PrintLeaves(root->left);
 			PrintLeaves(root->right);
 		}
+}
+//targil 3
+int Contains(node* root, int key) {
+	if (root != NULL) {
+		if (root->data == key)
+			return 1;
+		Contains(root->left, key);
+		Contains(root->right, key);
+	}
+	return 0;
+}
+
+//targil 4
+int CountNodes(node* root) {
+	if (root != NULL) {
+		return 1 + CountNodes(root->left) + CountNodes(root->right);
+	}
+	else if (root == NULL)
+		return 0;
+}
+//targil 5
+
+
+int SumOfKeys(node* root) {
+	if (root != NULL) {
+		return root->data + SumOfKeys(root->left) + SumOfKeys(root->right);
+	}
+	else if (root == NULL)
+		return 0;
+}
+//targil 6
+//this function is help function
+void CountNodesInGivenLevel(node* root, int level,int* count) {
+	if (root == NULL)
+		return;
+	if (level == 1) {
+		(*count)++;
+	}
+	else if (level > 1)
+	{
+		CountNodesInGivenLevel(root->left, level - 1,count);
+		CountNodesInGivenLevel(root->right, level - 1,count);	
+	}
+}
+//targil 6 function
+void LevelStatistics(node* root, int level) {
+	int count = 0;
+	CountNodesInGivenLevel(root, level, &count);
+	if (count == 0)
+		printf("This level not in the tree.");
+	else {
+		PrintGivenLevel(root, level);
+		printf("\nNumber of node's in %d level is:%d\n", level, count);
+	}
+}
+//targil 7
+int isPerfect(node* root) {
+
 }
