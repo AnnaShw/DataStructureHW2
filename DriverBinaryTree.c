@@ -31,7 +31,18 @@ int main()
 	printf("\nSum of all keys of the tree is: %d\n", SumOfKeys(root));
 	printf("\nCount of node's in this tree is: %d\n", CountNodes(root));*/
 	printf("\n\n");
-	LevelStatistics(root, 3);
+	//LevelStatistics(root, 3);
+	
+	if (isPerfect(root))
+	{
+		printf("Perfect");
+	}
+	else
+	{
+		printf("Not Perfect");
+	}
+	
+
 
 	deleteTree(root);
 	printf("\nTree deleted\n");

@@ -18,6 +18,7 @@ void PrintLevelOrder(node*);
 void pre_order_traversal(node*);
 void in_order_traversal(node*);
 
+//Targilim
 int IsEmpty(node* root);
 void PrintLeaves(node* root);
 int Contains(node* root, int key);
@@ -26,4 +27,5 @@ int SumOfKeys(node* root);
 void CountNodesInGivenLevel(node* root, int level, int* count);
 void LevelStatistics(node* root, int level);
 int isPerfect(node* root);
+
 #endif
